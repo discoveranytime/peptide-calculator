@@ -200,6 +200,138 @@ footer .fine{color:var(--faint);font-size:.8rem;margin-bottom:.4rem}
 footer nav{font-size:.78rem;color:var(--faint)}
 footer nav a{color:var(--faint);text-decoration:none;margin:0 .4rem}
 footer nav a:hover{color:var(--teal)}
+/* ============================= Tabs ============================= */
+.tabs{display:flex;gap:.5rem;min-width:0;background:var(--card);border:1px solid var(--card-border);border-radius:18px;padding:.45rem;box-shadow:var(--card-shadow)}
+.tab-btn{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:.65rem;border:1.5px solid transparent;background:transparent;border-radius:12px;padding:.7rem .6rem;cursor:pointer;color:var(--muted);transition:background .15s,color .15s,border-color .15s}
+.tab-btn:hover{color:var(--text);background:rgba(45,212,191,.07)}
+.tab-btn[aria-selected="true"]{background:linear-gradient(135deg,rgba(163,230,53,.12),rgba(45,212,191,.15));color:var(--text);border-color:var(--teal);box-shadow:0 0 16px rgba(45,212,191,.18)}
+.tab-emoji{font-size:1.35rem;line-height:1}
+.tab-text{text-align:left}
+.tab-name{display:block;font-weight:800;font-size:.95rem}
+.tab-sub{display:block;font-size:.7rem;color:var(--faint);margin-top:.1rem}
+.tab-btn[aria-selected="true"] .tab-sub{color:var(--muted)}
+@media(max-width:560px){
+  .tab-btn{padding:.6rem .4rem;gap:.45rem}
+  .tab-emoji{font-size:1.1rem}
+  .tab-name{font-size:.8rem}
+  .tab-sub{display:none}
+  .calc-title{white-space:normal;font-size:1.32rem}
+  .formula-line code{white-space:normal;overflow-wrap:anywhere}
+  .zone-tick{width:4rem}
+  .zone-tick span{font-size:.55rem}
+}
+.tabpanel{display:grid;gap:1.25rem;align-content:start;min-width:0}
+.tabpanel[hidden]{display:none}
+[hidden]{display:none!important}
+main.tab-wide{max-width:1140px}
+/* ============================= Nasal spray tab ============================= */
+.nasal-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:1.25rem;align-items:start}
+.nasal-main{display:grid;gap:1.25rem;align-content:start;min-width:0}
+.nasal-side{display:grid;gap:1.25rem;align-content:start;min-width:0}
+@media(max-width:960px){.nasal-layout{grid-template-columns:1fr}}
+.spec-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1rem}
+@media(max-width:640px){.spec-tiles{grid-template-columns:repeat(2,1fr)}}
+.spec-tile{background:var(--seg-bg);border:1px solid var(--card-border);border-radius:12px;padding:.8rem .6rem;text-align:center;display:flex;flex-direction:column;gap:.3rem}
+.spec-tile .st-label{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--faint)}
+.spec-tile .st-value{font-size:.98rem;font-weight:800;font-variant-numeric:tabular-nums}
+.ns-mode{margin-bottom:0}
+.mode-btn strong{font-size:.92rem}
+.mode-btn span{font-size:.72rem;color:var(--faint);font-weight:600}
+.mode-btn[aria-checked="true"] span{color:var(--muted)}
+.ns-head{margin-top:1.3rem}
+.btn-ghost{border:1px solid var(--input-border);background:transparent;color:var(--muted);border-radius:10px;padding:.45rem .9rem;font-size:.82rem;font-weight:800;cursor:pointer}
+.btn-ghost:hover{color:var(--text);border-color:var(--teal)}
+.nasal-inputs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
+@media(max-width:640px){.nasal-inputs{grid-template-columns:1fr}}
+.nasal-field{background:var(--seg-bg);border:1px solid var(--card-border);border-radius:14px;padding:.9rem;display:flex;flex-direction:column;gap:.55rem;min-width:0}
+.nf-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--faint)}
+.nf-input{width:100%;background:transparent;border:0;font-size:1.65rem;font-weight:800;color:var(--text);padding:.1rem 0;outline:none;font-variant-numeric:tabular-nums}
+.nf-input::placeholder{color:var(--faint);opacity:.55}
+.nf-input:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:6px}
+.nf-row{display:flex;align-items:baseline;gap:.5rem}
+.nf-unit{font-size:.85rem;font-weight:800;color:var(--faint)}
+.btn-calc{width:100%;padding:.95rem;border-radius:12px;border:1.5px solid rgba(34,211,238,.45);background:rgba(34,211,238,.1);color:var(--cyan);font-size:1rem;font-weight:800;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;margin-bottom:1rem}
+.btn-calc:hover{background:rgba(34,211,238,.18);box-shadow:0 8px 22px rgba(34,211,238,.2);transform:translateY(-1px)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+@media(max-width:520px){.stat-grid{grid-template-columns:1fr}}
+.stat-tile{background:var(--seg-bg);border:1px solid var(--card-border);border-radius:12px;padding:.85rem .9rem;display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.stat-tile .st-label{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--faint)}
+.stat-tile strong{font-size:1.12rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.stat-tile strong.hl{color:var(--teal)}
+.warn-card{border-color:rgba(251,191,36,.35)}
+.warn-title{color:var(--amber)}
+.num-list{margin:.6rem 0 0;padding:0;list-style:none;display:grid;gap:.55rem;color:var(--muted);font-size:.9rem;counter-reset:ns}
+.num-list li{counter-increment:ns;padding-left:1.8rem;position:relative}
+.num-list li::before{content:counter(ns) ".";position:absolute;left:0;color:var(--teal);font-weight:800}
+.num-list li strong{color:var(--text)}
+.dot-list{margin:.6rem 0;padding:0;list-style:none;display:grid;gap:.45rem;color:var(--muted);font-size:.9rem}
+.dot-list li{padding-left:1.4rem;position:relative}
+.dot-list li::before{content:"";position:absolute;left:.3rem;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.dot-list li strong{color:var(--text)}
+.warn-box{border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.07);border-radius:12px;padding:.95rem 1rem;margin-top:1rem}
+.warn-box .warn-title{color:var(--amber);font-weight:800;margin-bottom:.35rem;font-size:.92rem}
+.warn-box p{color:var(--muted);font-size:.86rem}
+.how-step{margin-bottom:.9rem}
+.how-step h3{font-size:.95rem;font-weight:800;margin-bottom:.2rem}
+.how-step p{color:var(--muted);font-size:.88rem}
+.mini-h{font-size:.92rem;font-weight:800;margin:1.1rem 0 .3rem}
+.vol-table{display:grid;gap:.5rem;margin-top:.6rem}
+.vol-table>div{display:flex;justify-content:space-between;align-items:center;background:var(--seg-bg);border:1px solid var(--card-border);border-radius:10px;padding:.6rem .8rem;font-size:.86rem}
+.vol-table span{color:var(--muted);font-weight:600}
+.vol-table strong{font-variant-numeric:tabular-nums}
+
+.syringe-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1rem}
+@media(max-width:560px){.syringe-cards{grid-template-columns:1fr}}
+.syr-card{border:1.5px solid var(--card-border);background:var(--seg-bg);border-radius:12px;padding:.9rem .6rem;display:flex;flex-direction:column;align-items:center;gap:.35rem;cursor:pointer;color:var(--muted);transition:border-color .15s,box-shadow .2s,background .2s}
+.syr-card:hover{color:var(--text)}
+.syr-card[aria-checked="true"]{border-color:var(--teal);color:var(--text);box-shadow:0 0 14px rgba(45,212,191,.18);background:linear-gradient(135deg,rgba(163,230,53,.1),rgba(45,212,191,.13))}
+.syr-card svg{width:76px;height:20px;color:var(--teal)}
+.syr-card .syr-ml{font-weight:800;font-size:1rem}
+.syr-card[aria-checked="true"] .syr-ml{color:var(--cyan)}
+.syr-card .syr-u{font-size:.68rem;font-weight:800;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+.draw-caption{text-align:center;color:var(--muted);font-size:.85rem;font-weight:800;letter-spacing:.06em;margin:.4rem 0 0}
+.draw-caption strong{color:var(--cyan)}
+.draw-hero{background:var(--hero-bg);border:1px solid var(--hero-border);border-radius:14px;padding:1.5rem 1rem;text-align:center;margin:1.1rem 0}
+.draw-hero .dh-label{font-size:.75rem;font-weight:800;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase}
+.draw-hero strong{display:block;font-size:3rem;font-weight:800;color:var(--cyan);font-variant-numeric:tabular-nums;text-shadow:0 0 24px rgba(34,211,238,.35);line-height:1.2}
+.draw-hero strong small{font-size:1.1rem;color:var(--muted);font-weight:700}
+.rec-box{margin-top:1rem;border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.07);border-radius:12px;padding:.8rem 1rem;text-align:center;color:var(--cyan);font-weight:700;font-size:.92rem}
+.auto-val{font-size:1.65rem;font-weight:800;color:var(--cyan);font-variant-numeric:tabular-nums;padding:.1rem 0}
+.st-sub{font-size:.75rem;color:var(--faint)}
+
+/* ============================= Macros tab ============================= */
+.slider-card{background:var(--seg-bg);border:1px solid var(--card-border);border-radius:14px;padding:1rem 1.1rem 1.2rem;margin:1rem 0}
+.slider-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.7rem}
+.zone-name{font-size:1rem;font-weight:800}
+.mult-val{color:var(--faint);font-size:.9rem;font-weight:600}
+.mult-val strong{color:var(--text);font-size:1.25rem;font-variant-numeric:tabular-nums}
+.macro-slider{width:100%;appearance:none;-webkit-appearance:none;height:10px;border-radius:999px;outline:none;cursor:pointer;
+  background:linear-gradient(to right,#ef4444 0%,#ef4444 14.3%,#fb923c 14.3%,#fb923c 35.7%,#2dd4bf 35.7%,#2dd4bf 57.1%,#60a5fa 57.1%,#60a5fa 78.6%,#c084fc 78.6%,#c084fc 100%)}
+.macro-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--cyan);box-shadow:0 0 14px rgba(34,211,238,.8);cursor:pointer}
+.macro-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--cyan);box-shadow:0 0 14px rgba(34,211,238,.8);cursor:pointer}
+.macro-slider:focus-visible{outline:2px solid var(--teal);outline-offset:6px}
+.zone-ticks{position:relative;height:2.6rem;margin-top:.55rem}
+.zone-tick{position:absolute;transform:translateX(-50%);text-align:center;width:5.5rem}
+.zone-tick i{display:block;width:3px;height:.8rem;border-radius:2px;margin:0 auto .25rem}
+.zone-tick span{font-size:.6rem;font-weight:800;letter-spacing:.05em;color:var(--faint);text-transform:uppercase;line-height:1.25;display:block}
+.macrobar{display:flex;height:.9rem;border-radius:999px;overflow:hidden;margin:1.1rem 0 .6rem;background:var(--seg-bg)}
+.mb-seg{height:100%;transition:width .25s}
+.mb-p{background:#22d3ee}.mb-c{background:#fb923c}.mb-f{background:#c084fc}
+.macro-legend{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;color:var(--muted);font-size:.82rem;margin-bottom:1rem}
+.macro-legend i{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;margin-right:.35rem}
+.stat-grid.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:560px){.stat-grid.three{grid-template-columns:1fr}}
+.stat-tile .st-emoji{font-size:1.5rem}
+.hero-sub{color:var(--muted);font-size:.88rem;margin-top:.5rem}
+.tip-box{border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.05);border-radius:12px;padding:.95rem 1.1rem;margin-top:1rem}
+.tip-box strong{display:block;margin-bottom:.3rem;font-size:.95rem}
+.tip-box p{color:var(--muted);font-size:.88rem}
+.kv-table{display:grid;gap:.45rem;margin-top:.6rem}
+.kv-table>div{display:flex;justify-content:space-between;align-items:center;background:var(--seg-bg);border:1px solid var(--card-border);border-radius:10px;padding:.55rem .8rem;font-size:.85rem}
+.kv-table span{color:var(--muted);font-weight:600}
+.kv-table strong{font-variant-numeric:tabular-nums}
+.kv-table .eq{color:var(--faint);font-weight:400;margin:0 .4rem}
+
 /* ============================= Focus / motion ============================= */
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
 @media (max-width:420px){.seg-4{grid-template-columns:repeat(2,1fr)}.seg-icon{width:64px;height:18px}}
@@ -232,10 +364,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
     <div style="position:relative">
       <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">☰</button>
       <nav class="nav-drawer" id="nav-drawer" hidden aria-label="Page sections">
-        <a href="#calc-card">Calculator</a>
-        <a href="#converters">Quick converters</a>
-        <a href="#reference">Reference</a>
-        <a href="#scope">Scope &amp; safety</a>
+        <a href="#calc-card" data-goto-tab="recon">Calculator</a>
+        <a href="#converters" data-goto-tab="recon">Quick converters</a>
+        <a href="#reference" data-goto-tab="recon">Reference</a>
+        <a href="#scope" data-goto-tab="recon">Scope &amp; safety</a>
+        <a href="#panel-nasal" data-goto-tab="nasal">Intranasal spray calc</a>
+        <a href="#panel-hgh" data-goto-tab="hgh">HGH dosing calc</a>
+        <a href="#panel-macros" data-goto-tab="macros">Macros calc</a>
       </nav>
     </div>
     <div class="theme-seg" role="radiogroup" aria-label="Color theme">
@@ -247,6 +382,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 </header>
 
 <main id="main" class="wrap">
+  <div class="tabs" role="tablist" aria-label="Calculator">
+    <button type="button" class="tab-btn" role="tab" id="tab-recon" aria-controls="panel-recon" aria-selected="true">
+      <span class="tab-emoji" aria-hidden="true">💉</span>
+      <span class="tab-text"><span class="tab-name">Reconstitution</span><span class="tab-sub">injection draw volume</span></span>
+    </button>
+    <button type="button" class="tab-btn" role="tab" id="tab-nasal" aria-controls="panel-nasal" aria-selected="false" tabindex="-1">
+      <span class="tab-emoji" aria-hidden="true">🌿</span>
+      <span class="tab-text"><span class="tab-name">Intranasal</span><span class="tab-sub">nasal spray dosing</span></span>
+    </button>
+    <button type="button" class="tab-btn" role="tab" id="tab-hgh" aria-controls="panel-hgh" aria-selected="false" tabindex="-1">
+      <span class="tab-emoji" aria-hidden="true">🚀</span>
+      <span class="tab-text"><span class="tab-name">HGH Dosing</span><span class="tab-sub">IU reconstitution</span></span>
+    </button>
+    <button type="button" class="tab-btn" role="tab" id="tab-macros" aria-controls="panel-macros" aria-selected="false" tabindex="-1">
+      <span class="tab-emoji" aria-hidden="true">🍑</span>
+      <span class="tab-text"><span class="tab-name">Macros</span><span class="tab-sub">calorie &amp; macro targets</span></span>
+    </button>
+  </div>
+  <div class="tabpanel" id="panel-recon" role="tabpanel" aria-labelledby="tab-recon" tabindex="0">
   <!-- ================= Calculator ================= -->
   <section class="card" id="calc-card" aria-labelledby="calc-heading">
     <h1 class="calc-title" id="calc-heading" style="font-size:1.35rem">Peptide Reconstitution Calculator</h1>
@@ -405,11 +559,388 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
     <h3 id="scope">Scope &amp; safety</h3>
     <p>This calculator and reference material are provided for informational and educational purposes and are <strong>not medical advice</strong>; they do not establish a dosing recommendation. Consult a qualified clinician before use.</p>
   </section>
+  </div><!-- /panel-recon -->
+  <div class="tabpanel" id="panel-nasal" role="tabpanel" aria-labelledby="tab-nasal" tabindex="0" hidden>
+    <div class="nasal-layout">
+      <div class="nasal-main">
+        <section class="card" aria-labelledby="ns-specs-h">
+          <h2 class="sec" id="ns-specs-h">Standard Nasal Spray Pump Specs</h2>
+          <p class="lede">Standard pharma nasal spray pumps deliver <strong>0.1 mL (100 µL) per actuation</strong> — the industry standard used by Aptar, Rexam, and research compound sprays.</p>
+          <div class="spec-tiles">
+            <div class="spec-tile"><span class="st-label">Pump volume</span><span class="st-value">0.1 mL/spray</span></div>
+            <div class="spec-tile"><span class="st-label">5 mL bottle</span><span class="st-value">50 sprays</span></div>
+            <div class="spec-tile"><span class="st-label">10 mL bottle</span><span class="st-value">100 sprays</span></div>
+            <div class="spec-tile"><span class="st-label">Both nostrils</span><span class="st-value">0.2 mL/dose</span></div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="ns-calc-h">
+          <div class="segmented seg-2 ns-mode" id="ns-mode" role="radiogroup" aria-label="Calculator mode">
+            <button type="button" role="radio" aria-checked="true" data-value="vial" class="seg-btn mode-btn"><strong>DIY Nasal Spray Vial Version</strong><span>how much liquid to add</span></button>
+            <button type="button" role="radio" aria-checked="false" data-value="premixed" class="seg-btn mode-btn"><strong>Premixed Bottled Version</strong><span>use this if you bought a premixed solution</span></button>
+          </div>
+
+          <div class="dose-head ns-head">
+            <h2 class="sec" id="ns-calc-h" style="margin:0">Inputs</h2>
+            <button type="button" class="btn-ghost" id="ns-reset">⟲ Reset</button>
+          </div>
+          <p class="safety-note"><strong>Research math only</strong> — not medical advice. All values are theoretical; actual spray output varies by device and formulation.</p>
+
+          <div id="ns-vial-pane">
+            <div class="nasal-inputs">
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-vial-size">Vial size</label>
+                <input class="nf-input" id="ns-vial-size" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="10" aria-describedby="ns-err-vial">
+                <div class="segmented seg-2 mini" id="ns-vial-unit" role="radiogroup" aria-label="Vial size unit">
+                  <button type="button" role="radio" aria-checked="true" data-value="mg" class="seg-btn"><span>MG</span></button>
+                  <button type="button" role="radio" aria-checked="false" data-value="mcg" class="seg-btn"><span>MCG</span></button>
+                </div>
+                <p class="error" id="ns-err-vial" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-target">Target dose</label>
+                <input class="nf-input" id="ns-target" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="250" aria-describedby="ns-err-target">
+                <div class="segmented seg-2 mini" id="ns-target-unit" role="radiogroup" aria-label="Target dose unit">
+                  <button type="button" role="radio" aria-checked="true" data-value="mcg" class="seg-btn"><span>MCG</span></button>
+                  <button type="button" role="radio" aria-checked="false" data-value="mg" class="seg-btn"><span>MG</span></button>
+                </div>
+                <p class="error" id="ns-err-target" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-sprayvol">Spray volume</label>
+                <div class="nf-row"><input class="nf-input" id="ns-sprayvol" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0.10" aria-describedby="ns-err-sprayvol"><span class="nf-unit">mL</span></div>
+                <p class="hint subtle">Common: 0.05–0.14 mL per spray</p>
+                <p class="error" id="ns-err-sprayvol" role="alert" hidden></p>
+              </div>
+            </div>
+            <button type="button" class="btn-calc" id="ns-calc-btn">Calculate — Vial Version</button>
+            <div class="stat-grid" id="ns-vial-results" aria-live="polite">
+              <div class="stat-tile"><span class="st-label">Liquid to add</span><strong class="hl" id="ns-r-liquid">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Concentration</span><strong id="ns-r-conc">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Per spray</span><strong id="ns-r-perspray">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Sprays per dose</span><strong id="ns-r-sprays">—</strong></div>
+            </div>
+            <p class="sr-only" role="status" id="ns-sr-vial"></p>
+          </div>
+
+          <div id="ns-premix-pane" hidden>
+            <div class="nasal-inputs">
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-p-peptide">Peptide amount</label>
+                <div class="nf-row"><input class="nf-input" id="ns-p-peptide" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="10" aria-describedby="ns-p-err-peptide"><span class="nf-unit">mg</span></div>
+                <p class="error" id="ns-p-err-peptide" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-p-recon">Reconstitution volume</label>
+                <div class="nf-row"><input class="nf-input" id="ns-p-recon" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="4" aria-describedby="ns-p-err-recon"><span class="nf-unit">mL</span></div>
+                <p class="error" id="ns-p-err-recon" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-p-additional">Additional liquid <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+                <div class="nf-row"><input class="nf-input" id="ns-p-additional" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" aria-describedby="ns-p-err-additional"><span class="nf-unit">mL</span></div>
+                <p class="error" id="ns-p-err-additional" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-p-sprayvol">Spray output</label>
+                <div class="nf-row"><input class="nf-input" id="ns-p-sprayvol" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0.10" aria-describedby="ns-p-err-sprayvol"><span class="nf-unit">mL</span></div>
+                <p class="error" id="ns-p-err-sprayvol" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-p-target">Target quantity <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+                <div class="nf-row"><input class="nf-input" id="ns-p-target" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="250" aria-describedby="ns-p-err-target"><span class="nf-unit">mcg</span></div>
+                <p class="hint subtle">Reference quantity, for comparison</p>
+                <p class="error" id="ns-p-err-target" role="alert" hidden></p>
+              </div>
+              <div class="nasal-field">
+                <label class="nf-label" for="ns-p-n">Number of sprays</label>
+                <input class="nf-input" id="ns-p-n" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="1" aria-describedby="ns-p-err-n">
+                <p class="error" id="ns-p-err-n" role="alert" hidden></p>
+              </div>
+            </div>
+            <button type="button" class="btn-calc" id="ns-calc-btn2">Calculate — Premixed Version</button>
+            <div class="stat-grid" id="ns-premix-results" aria-live="polite">
+              <div class="stat-tile"><span class="st-label">Total peptide</span><strong id="ns-p-r-peptide">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Final solution volume</span><strong id="ns-p-r-finalvol">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Concentration</span><strong id="ns-p-r-conc">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Per spray</span><strong class="hl" id="ns-p-r-perspray">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Total for N sprays</span><strong id="ns-p-r-totaln">—</strong></div>
+              <div class="stat-tile"><span class="st-label">Sprays available</span><strong id="ns-p-r-avail">—</strong></div>
+              <div class="stat-tile" id="ns-p-r-targetwrap" hidden><span class="st-label">Sprays for target</span><strong id="ns-p-r-target">—</strong></div>
+            </div>
+            <p class="sr-only" role="status" id="ns-sr-premix"></p>
+          </div>
+        </section>
+
+        <section class="card warn-card" aria-labelledby="ns-verify-h">
+          <h2 class="sec warn-title" id="ns-verify-h">⚠️ How to Verify Your Spray Volume</h2>
+          <p class="lede" style="margin-bottom:.4rem">Bottles vary. Calibrate before relying on calculated values:</p>
+          <ol class="num-list">
+            <li>Fill with plain water (use a 1 mL pipette/syringe to measure precisely).</li>
+            <li>Prime 3–5 times, then spray <strong>10 actuations</strong> into a container.</li>
+            <li>Collect the sprayed liquid with a <strong>1 mL syringe</strong> to measure total volume.</li>
+            <li>Divide by 10 for your actual <strong>mL per spray</strong>.</li>
+          </ol>
+          <p class="hint subtle" style="margin-top:.7rem"><em>Most bottles deliver 0.08–0.14 mL per actuation. Metered pumps are more consistent than squeeze bottles.</em></p>
+        </section>
+
+        <section class="card" aria-labelledby="ns-tips-h">
+          <h2 class="sec" id="ns-tips-h">Nasal Administration Tips</h2>
+          <ol class="num-list">
+            <li>Prime with 2–3 pumps before first use</li>
+            <li>Alternate nostrils for each spray</li>
+            <li>Tilt head forward, aim at outer nostril wall</li>
+            <li>Wait 30–60s between sprays (same nostril)</li>
+            <li>Gentle breath in — don't sniff hard</li>
+          </ol>
+        </section>
+
+        <section class="card" aria-labelledby="ns-pump-h">
+          <h2 class="sec" id="ns-pump-h">Standard Nasal Spray Pump Volume</h2>
+          <p class="lede">The <strong>standard nasal spray pump volume per actuation is 0.1 mL (100 µL)</strong>. This is the industry-standard delivery volume used by most pharmaceutical-grade metered-dose nasal spray devices, including those from Aptar, Nemera, and other major pump manufacturers.</p>
+          <p class="lede">Metered-dose nasal spray pumps use a mechanical piston system that delivers a precise, reproducible volume with each actuation — typically within ±5% of the rated output. Some specialty devices deliver different volumes:</p>
+          <ul class="dot-list">
+            <li><strong>Standard metered-dose pumps:</strong> 0.1 mL (100 µL) — most common</li>
+            <li><strong>Low-volume pumps:</strong> 0.05 mL (50 µL) — for highly concentrated formulations</li>
+            <li><strong>High-volume pumps:</strong> 0.14 mL (140 µL) — less common, for dilute solutions</li>
+            <li><strong>Squeeze bottles:</strong> Variable (0.05–0.20 mL) — not recommended for precise dosing</li>
+          </ul>
+          <p class="hint subtle">For research compound work, always use a metered-dose pump and calibrate with the method above for accurate mcg-per-spray values.</p>
+        </section>
+      </div>
+
+      <aside class="nasal-side" aria-label="Nasal spray reference">
+        <section class="card" aria-labelledby="ns-how-h">
+          <h2 class="sec" id="ns-how-h">ℹ️ How It Works</h2>
+          <div class="how-step"><h3>1. Volume per Dose</h3><p>Target dose ÷ concentration = mL needed per administration.</p></div>
+          <div class="how-step"><h3>2. Sprays Needed</h3><p>Volume per dose ÷ actuated spray volume = number of sprays per dose.</p></div>
+          <div class="how-step"><h3>3. Liquid to Add</h3><p>Total vial mass ÷ target concentration = total mL to add to the vial.</p></div>
+          <h3 class="mini-h">Example</h3>
+          <ul class="dot-list">
+            <li>10 mg vial, 250 mcg target dose</li>
+            <li>Spray device = 0.1 mL per actuation</li>
+            <li>Add 4 mL → 2,500 mcg/mL</li>
+            <li>1 spray = 250 mcg ✓</li>
+          </ul>
+          <div class="warn-box">
+            <p class="warn-title">⚠️ Research Use Only</p>
+            <p>For educational and research purposes only. Not medical advice. Consult a qualified professional before preparing or administering any compound.</p>
+          </div>
+          <h3 class="mini-h">Typical Spray Volumes</h3>
+          <div class="vol-table">
+            <div><span>Standard nasal</span><strong>≈ 0.10 mL</strong></div>
+            <div><span>Fine mist</span><strong>≈ 0.05–0.07 mL</strong></div>
+            <div><span>Large actuator</span><strong>≈ 0.12–0.14 mL</strong></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+  <div class="tabpanel" id="panel-hgh" role="tabpanel" aria-labelledby="tab-hgh" tabindex="0" hidden>
+    <div class="nasal-layout">
+      <div class="nasal-main">
+        <section class="card" aria-labelledby="hgh-h">
+          <div class="dose-head">
+            <h2 class="sec" id="hgh-h" style="margin:0">Inputs</h2>
+            <button type="button" class="btn-ghost" id="hgh-reset">⟲ Reset</button>
+          </div>
+          <p class="group-label" style="margin-top:1.1rem">BAC water mode</p>
+          <div class="segmented seg-2 ns-mode" id="hgh-mode" role="radiogroup" aria-label="BAC water mode">
+            <button type="button" role="radio" aria-checked="true" data-value="auto" class="seg-btn mode-btn"><strong>Auto-Calculate Water</strong></button>
+            <button type="button" role="radio" aria-checked="false" data-value="manual" class="seg-btn mode-btn"><strong>Manually Enter Water</strong></button>
+          </div>
+          <p class="hint" id="hgh-mode-hint">Solves for the BAC water amount that lands your dose at exactly <strong>10 units</strong> — the sweet spot. Too little water means too small a volume to measure accurately (under 5 units); too much water means injecting a larger volume (30+ units).</p>
+
+          <div class="nasal-inputs">
+            <div class="nasal-field">
+              <label class="nf-label" for="hgh-vial">HGH vial amount</label>
+              <div class="nf-row"><input class="nf-input" id="hgh-vial" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="10" aria-describedby="hgh-err-vial"><span class="nf-unit">IU</span></div>
+              <p class="error" id="hgh-err-vial" role="alert" hidden></p>
+            </div>
+            <div class="nasal-field">
+              <label class="nf-label" for="hgh-target">Target dose</label>
+              <div class="nf-row"><input class="nf-input" id="hgh-target" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="2" aria-describedby="hgh-err-target"><span class="nf-unit">IU</span></div>
+              <p class="error" id="hgh-err-target" role="alert" hidden></p>
+            </div>
+            <div class="nasal-field">
+              <span class="nf-label" id="hgh-water-label">⚡ Auto-calculated</span>
+              <div class="nf-row" id="hgh-water-auto-row"><span class="auto-val" id="hgh-water-auto" aria-live="polite">—</span><span class="nf-unit">mL</span></div>
+              <div class="nf-row" id="hgh-water-manual-row" hidden><input class="nf-input" id="hgh-water" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0.50" aria-describedby="hgh-err-water" aria-labelledby="hgh-water-label"><span class="nf-unit">mL</span></div>
+              <p class="error" id="hgh-err-water" role="alert" hidden></p>
+            </div>
+          </div>
+
+          <p class="group-label">Syringe size</p>
+          <div class="syringe-cards" id="hgh-syringe" role="radiogroup" aria-label="Syringe size">
+            <button type="button" role="radio" aria-checked="true" data-value="30" class="syr-card"><svg aria-hidden="true"><use href="#syringe-icon"/></svg><span class="syr-ml">0.3 mL</span><span class="syr-u">30 units</span></button>
+            <button type="button" role="radio" aria-checked="false" data-value="50" class="syr-card"><svg aria-hidden="true"><use href="#syringe-icon"/></svg><span class="syr-ml">0.5 mL</span><span class="syr-u">50 units</span></button>
+            <button type="button" role="radio" aria-checked="false" data-value="100" class="syr-card"><svg aria-hidden="true"><use href="#syringe-icon"/></svg><span class="syr-ml">1.0 mL</span><span class="syr-u">100 units</span></button>
+          </div>
+
+          <div id="hgh-vizwrap" hidden>
+            <p class="viz-label">Draw marker</p>
+            <div class="ruler" id="hgh-ruler" role="img" aria-label="Syringe ruler">
+              <div class="ruler-fill" id="hgh-ruler-fill"></div>
+              <div class="ruler-ticks" id="hgh-ruler-ticks"></div>
+              <div class="ruler-marker" id="hgh-ruler-marker"></div>
+            </div>
+            <p class="draw-caption">Draw to <strong id="hgh-draw-label">—</strong></p>
+          </div>
+          <p class="calc-warning" id="hgh-warn" role="alert" hidden></p>
+
+          <div class="draw-hero" aria-live="polite">
+            <span class="dh-label">● Draw to</span>
+            <strong><span id="hgh-draw-big">—</span> <small>units</small></strong>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-tile"><span class="st-label">Concentration</span><strong id="hgh-r-conc">—</strong><span class="st-sub">IU/mL</span></div>
+            <div class="stat-tile"><span class="st-label">Total doses</span><strong id="hgh-r-doses">—</strong><span class="st-sub">per vial</span></div>
+          </div>
+          <p class="hint subtle" id="hgh-summary" style="margin-top:.8rem;text-align:center"></p>
+          <div class="rec-box" id="hgh-rec" hidden></div>
+          <p class="sr-only" role="status" id="hgh-sr"></p>
+        </section>
+      </div>
+      <aside class="nasal-side" aria-label="HGH dosing reference">
+        <section class="card" aria-labelledby="hgh-how-h">
+          <h2 class="sec" id="hgh-how-h">ℹ️ How It Works</h2>
+          <div class="how-step"><h3>1. Concentration</h3><p>Vial amount (IU) ÷ BAC water (mL) = concentration in IU/mL.</p></div>
+          <div class="how-step"><h3>2. Draw Amount</h3><p>Target dose ÷ concentration = injection volume, converted to units on a U-100 insulin syringe (100 units = 1 mL).</p></div>
+          <div class="how-step"><h3>3. Aim for 10+ Units</h3><p>Enter a BAC water amount that lands your target dose at 10 units or more — that keeps you off the hard-to-read low end of the syringe.</p></div>
+          <h3 class="mini-h">Example</h3>
+          <ul class="dot-list">
+            <li>10 IU vial, 0.5 mL BAC water added</li>
+            <li>10 IU ÷ 0.5 mL = 20 IU/mL</li>
+            <li>2 IU target dose ÷ 20 IU/mL = 0.10 mL</li>
+            <li>Draw to 10 units ✓</li>
+          </ul>
+          <div class="warn-box">
+            <p class="warn-title">⚠️ Research Use Only</p>
+            <p>For educational and research purposes only. Not medical advice. Consult a qualified professional before preparing or administering any compound.</p>
+          </div>
+          <h3 class="mini-h">Syringe Reference</h3>
+          <div class="vol-table">
+            <div><span>10 units</span><strong>= 0.10 mL</strong></div>
+            <div><span>20 units</span><strong>= 0.20 mL</strong></div>
+            <div><span>30 units</span><strong>= 0.30 mL</strong></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+  <div class="tabpanel" id="panel-macros" role="tabpanel" aria-labelledby="tab-macros" tabindex="0" hidden>
+    <div class="nasal-layout">
+      <div class="nasal-main">
+        <section class="card" aria-labelledby="mc-h">
+          <div class="dose-head">
+            <h2 class="sec" id="mc-h" style="margin:0">Inputs</h2>
+            <button type="button" class="btn-ghost" id="mc-reset">⟲ Reset</button>
+          </div>
+
+          <div class="nasal-field" style="margin-top:1rem">
+            <label class="nf-label" for="mc-weight">Body weight</label>
+            <div class="nf-row"><input class="nf-input" id="mc-weight" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="180" aria-describedby="mc-err-weight"><span class="nf-unit">LBS</span></div>
+            <p class="error" id="mc-err-weight" role="alert" hidden></p>
+          </div>
+
+          <div class="slider-card">
+            <div class="slider-top">
+              <span class="zone-name" id="mc-zone">Maintenance</span>
+              <span class="mult-val">× <strong id="mc-mult">14</strong></span>
+            </div>
+            <input type="range" class="macro-slider" id="mc-slider" min="7" max="21" step="1" value="14" aria-label="Calorie multiplier, 7 to 21">
+            <div class="zone-ticks" aria-hidden="true">
+              <div class="zone-tick" style="left:7.1%"><i style="background:#f87171"></i><span>Extreme<br>weight loss</span></div>
+              <div class="zone-tick" style="left:28.6%"><i style="background:#fb923c"></i><span>Fat<br>loss</span></div>
+              <div class="zone-tick" style="left:50%"><i style="background:#2dd4bf"></i><span>Maintenance</span></div>
+              <div class="zone-tick" style="left:71.4%"><i style="background:#60a5fa"></i><span>Muscle<br>gain</span></div>
+              <div class="zone-tick" style="left:92.9%"><i style="background:#c084fc"></i><span>Extreme<br>weight gain</span></div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-calc" id="mc-calc-btn">Calculate My Macros</button>
+
+          <div class="draw-hero" aria-live="polite">
+            <span class="dh-label">Daily calorie target</span>
+            <strong><span id="mc-kcal">—</span> <small>kcal</small></strong>
+            <p class="hero-sub" id="mc-kcal-sub"></p>
+          </div>
+
+          <div id="mc-results" hidden>
+            <div class="macrobar" aria-hidden="true">
+              <div class="mb-seg mb-p" id="mc-bar-p"></div><div class="mb-seg mb-c" id="mc-bar-c"></div><div class="mb-seg mb-f" id="mc-bar-f"></div>
+            </div>
+            <p class="macro-legend"><span><i style="background:#22d3ee"></i>Protein&nbsp;4&nbsp;cal/g</span><span><i style="background:#fb923c"></i>Carbs&nbsp;4&nbsp;cal/g</span><span><i style="background:#c084fc"></i>Fat&nbsp;9&nbsp;cal/g</span></p>
+            <div class="stat-grid three">
+              <div class="stat-tile"><span class="st-emoji" aria-hidden="true">🥩</span><span class="st-label">Protein</span><strong id="mc-r-protein">—</strong><span class="st-sub">grams</span></div>
+              <div class="stat-tile"><span class="st-emoji" aria-hidden="true">🍚</span><span class="st-label">Carbs</span><strong id="mc-r-carbs">—</strong><span class="st-sub">grams</span></div>
+              <div class="stat-tile"><span class="st-emoji" aria-hidden="true">🥑</span><span class="st-label">Fat</span><strong id="mc-r-fat">—</strong><span class="st-sub">grams</span></div>
+            </div>
+            <p class="hint subtle" id="mc-summary" style="margin-top:.8rem;text-align:center"></p>
+            <p class="hint subtle" style="text-align:center;max-width:34rem;margin-left:auto;margin-right:auto">Calories come from 4 per gram of protein, 4 per gram of carbs, and 9 per gram of fat — fat carries more than double the energy per gram, which is why a little of it fills out a lot of the remaining calories.</p>
+            <div class="tip-box" id="mc-tip">
+              <strong id="mc-tip-title">Holding steady</strong>
+              <p id="mc-tip-body">At maintenance, the goal is a stable weight. If it drifts up or down for more than a week, nudge the multiplier by 1 in the opposite direction and reassess weekly.</p>
+            </div>
+          </div>
+          <p class="sr-only" role="status" id="mc-sr"></p>
+        </section>
+      </div>
+      <aside class="nasal-side" aria-label="Macro calculation reference">
+        <section class="card" aria-labelledby="mc-how-h">
+          <h2 class="sec" id="mc-how-h">ℹ️ How It Works</h2>
+          <div class="how-step"><h3>1. Pick a Zone</h3><p>Slide the multiplier from 7 to 21 — it moves in whole-number steps. The colored tick marks at 8, 11, 14, 17, and 20 show the recommended starting point within each goal zone; the calculator opens at 14 (Maintenance).</p></div>
+          <div class="how-step"><h3>2. Daily Calories</h3><p>Body weight (lbs) × multiplier = daily calorie target.</p></div>
+          <div class="how-step"><h3>3. Macro Split</h3><p>Protein scales with your goal: 1g per lb for fat loss and maintenance, 1.2g per lb for Muscle Gain and Extreme Weight Gain. Fat: 0.3g per lb. Remaining calories become carbs.</p></div>
+          <div class="how-step"><h3>4. Why 4, 4, and 9</h3><p>Protein and carbs each supply 4 calories per gram; fat supplies 9. That's why fat grams look small next to protein and carbs even when they represent a meaningful share of the day's calories.</p></div>
+          <h3 class="mini-h">Example</h3>
+          <ul class="dot-list">
+            <li>180 lbs at ×12 (Fat Loss)</li>
+            <li>180 × 12 = 2,160 kcal</li>
+            <li>Protein: 180g × 4 = 720 kcal</li>
+            <li>Fat: 54g × 9 = 486 kcal</li>
+            <li>Carbs: remaining 954 kcal ÷ 4 = 239g</li>
+          </ul>
+          <div class="warn-box">
+            <p class="warn-title">⚠️ Not Medical Advice</p>
+            <p>For educational and research purposes only. Consult a qualified professional before starting any diet or nutrition program.</p>
+          </div>
+          <h3 class="mini-h">Multiplier Zones</h3>
+          <div class="kv-table">
+            <div><span>Extreme Wt Loss</span><strong><span class="eq">=</span>7–9×</strong></div>
+            <div><span>Fat Loss</span><strong><span class="eq">=</span>10–12×</strong></div>
+            <div><span>Maintenance</span><strong><span class="eq">=</span>13–15×</strong></div>
+            <div><span>Muscle Gain</span><strong><span class="eq">=</span>16–18×</strong></div>
+            <div><span>Extreme Wt Gain</span><strong><span class="eq">=</span>19–21×</strong></div>
+          </div>
+          <h3 class="mini-h">Protein per Pound, by Zone</h3>
+          <div class="kv-table">
+            <div><span>Extreme Wt Loss</span><strong><span class="eq">=</span>1g/lb</strong></div>
+            <div><span>Fat Loss</span><strong><span class="eq">=</span>1g/lb</strong></div>
+            <div><span>Maintenance</span><strong><span class="eq">=</span>1g/lb</strong></div>
+            <div><span>Muscle Gain</span><strong><span class="eq">=</span>1.2g/lb</strong></div>
+            <div><span>Extreme Wt Gain</span><strong><span class="eq">=</span>1.2g/lb</strong></div>
+          </div>
+          <h3 class="mini-h">Calories per Gram</h3>
+          <div class="kv-table">
+            <div><span>Protein</span><strong><span class="eq">=</span>4 cal/g</strong></div>
+            <div><span>Carbs</span><strong><span class="eq">=</span>4 cal/g</strong></div>
+            <div><span>Fat</span><strong><span class="eq">=</span>9 cal/g</strong></div>
+          </div>
+          <h3 class="mini-h">Weekly Adjustment</h3>
+          <div class="warn-box" style="margin-top:.4rem">
+            <p>If weight hasn't moved after a full week at the same multiplier, shift by 1 in the direction of your goal, then hold and reassess after another week. Repeat whenever progress stalls.</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
 </main>
 
 <footer>
   <p class="fine">Research and education resource, not medical advice.</p>
-  <nav aria-label="Footer"><a href="#reference">Reference</a> · <a href="#scope">Scope &amp; safety</a></nav>
+  <nav aria-label="Footer"><a href="#reference" data-goto-tab="recon">Reference</a> · <a href="#scope" data-goto-tab="recon">Scope &amp; safety</a></nav>
 </footer>
 
 <script>
@@ -492,9 +1023,16 @@ function init(){
   initDots();
   initTheme();
   initMenu();
+  initTabs();
   initSegmentedGroups();
   initConverters();
+  initNasal();
+  initHgh();
+  initMacros();
   recalculate();
+  nsRecalc(false);
+  hghRecalc();
+  mcRecalc(false);
 }
 
 /* ---------- Background dots: small colorful dots drifting & fading ---------- */
@@ -708,7 +1246,7 @@ function recalculate(){
   const showViz=drawUnits!==null&&capUnits!==null&&capUnits>0;
   viz.hidden=!showViz;
   if(showViz){
-    renderRuler(capUnits,drawUnits);
+    renderRuler("",capUnits,drawUnits);
     const span=capUnits*0.25;
     // Pin the zoom window when the draw exceeds the syringe so the marker
     // never computes a negative/off-track position.
@@ -757,8 +1295,8 @@ function renderTicks(containerId,ticks){
 }
 /* Ruler scaled to the selected syringe: numbered major ticks + minor ticks,
    fill up to the draw, and a marker line at the exact draw position. */
-function renderRuler(capUnits,drawUnits){
-  const box=byId("ruler-ticks"); box.innerHTML="";
+function renderRuler(p,capUnits,drawUnits){
+  const box=byId(p+"ruler-ticks"); box.innerHTML="";
   const major=capUnits>=100?10:5, minor=capUnits>=100?2:1;
   for(let u=0;u<=capUnits+1e-9;u+=minor){
     const isMajor=Math.abs(u/major-Math.round(u/major))<1e-9;
@@ -774,9 +1312,9 @@ function renderRuler(capUnits,drawUnits){
     box.appendChild(s);
   }
   const pct=Math.min(drawUnits/capUnits,1)*100;
-  byId("ruler-fill").style.width=`${pct}%`;
-  byId("ruler-marker").style.left=`${pct}%`;
-  byId("ruler").setAttribute("aria-label",
+  byId(p+"ruler-fill").style.width=`${pct}%`;
+  byId(p+"ruler-marker").style.left=`${pct}%`;
+  byId(p+"ruler").setAttribute("aria-label",
     `Syringe ruler, 0 to ${formatUnits(capUnits)} units. Draw marker at ${formatUnits(drawUnits)} units.`);
 }
 function renderMath(c){
@@ -802,6 +1340,415 @@ function renderMath(c){
     ?`${formatNum(c.concentration)} mg/mL`:"—";
   byId("math-doses").textContent=c.doses!==null?String(c.doses):"—";
   byId("math-syringe").textContent=c.capUnits!==null?`${formatUnits(c.capUnits)} units`:"—";
+}
+
+/* ==========================================================================
+   TABS — Reconstitution / Intranasal
+   ========================================================================== */
+function initTabs(){
+  const tabs=[...document.querySelectorAll('[role="tab"]')];
+  const main=byId("main");
+  const names=tabs.map(t=>t.id.replace("tab-",""));
+  let current=safeGet("pc-tab")||"recon";
+  if(!byId("panel-"+current)) current="recon";
+  function activate(name,focus){
+    current=name;
+    tabs.forEach(t=>{
+      const sel=t.id==="tab-"+name;
+      t.setAttribute("aria-selected",String(sel));
+      t.tabIndex=sel?0:-1;
+      if(sel&&focus) t.focus();
+    });
+    names.forEach(k=>{ const p=byId("panel-"+k); if(p) p.hidden=(k!==name); });
+    main.classList.add("tab-wide");
+    safeSet("pc-tab",name);
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener("click",()=>activate(t.id.replace("tab-","")));
+    t.addEventListener("keydown",(e)=>{
+      let j=null;
+      if(e.key==="ArrowRight"||e.key==="ArrowDown") j=(i+1)%tabs.length;
+      else if(e.key==="ArrowLeft"||e.key==="ArrowUp") j=(i-1+tabs.length)%tabs.length;
+      else if(e.key==="Home") j=0;
+      else if(e.key==="End") j=tabs.length-1;
+      if(j!==null){ e.preventDefault(); activate(tabs[j].id.replace("tab-",""),true); }
+    });
+  });
+  document.querySelectorAll("[data-goto-tab]").forEach(a=>{
+    a.addEventListener("click",()=>activate(a.dataset.gotoTab));
+  });
+  activate(current);
+}
+
+/* ==========================================================================
+   NASAL SPRAY CALCULATOR — pure core (no DOM).
+   Vial mode:  liquid_to_add = vial_mcg × spray_vol_mL ÷ target_mcg
+   Premixed:   final_vol = recon_vol + additional_vol
+               conc = peptide ÷ final_vol
+               per_spray = conc × spray_vol
+   ========================================================================== */
+function nsLiquidToAddMl(vialMcg,targetMcg,sprayVolMl){
+  if(vialMcg===null||targetMcg===null||sprayVolMl===null) return null;
+  if(!(vialMcg>0)||!(targetMcg>0)||!(sprayVolMl>0)) return null;
+  return vialMcg*sprayVolMl/targetMcg;
+}
+function nsConcentrationMgMl(peptideMg,finalVolMl){
+  if(peptideMg===null||finalVolMl===null) return null;
+  if(!(peptideMg>0)||!(finalVolMl>0)) return null;
+  return peptideMg/finalVolMl;
+}
+function nsPerSprayMcg(concMcgMl,sprayVolMl){
+  if(concMcgMl===null||sprayVolMl===null) return null;
+  if(!(concMcgMl>=0)||!(sprayVolMl>0)) return null;
+  return concMcgMl*sprayVolMl;
+}
+function nsSpraysAvailable(finalVolMl,sprayVolMl){
+  if(finalVolMl===null||sprayVolMl===null) return null;
+  if(!(finalVolMl>0)||!(sprayVolMl>0)) return null;
+  return finalVolMl/sprayVolMl;
+}
+function nsFmt(n,d){
+  if(n===null||n===undefined||!Number.isFinite(n)) return "—";
+  const r=Number(n.toFixed(d));
+  return r.toLocaleString("en-US",{maximumFractionDigits:d});
+}
+function nsFmtF(n,d){
+  if(n===null||n===undefined||!Number.isFinite(n)) return "—";
+  return Number(n.toFixed(d)).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+}
+if(typeof module!=="undefined"&&module.exports){
+  module.exports=Object.assign(module.exports||{},{
+    nsLiquidToAddMl,nsConcentrationMgMl,nsPerSprayMcg,nsSpraysAvailable,nsFmt
+  });
+}
+
+/* ---------- Nasal UI wiring ---------- */
+const NS={};
+let nsSrTimer=null;
+function nsAnnounce(id,msg){
+  clearTimeout(nsSrTimer);
+  nsSrTimer=setTimeout(()=>{ const el=byId(id); if(el) el.textContent=msg; },600);
+}
+function nsSet(id,text){ const el=byId(id); if(el) el.textContent=text; }
+function initNasal(){
+  NS.mode=makeSegmented("ns-mode");
+  NS.vialUnit=makeSegmented("ns-vial-unit");
+  NS.targetUnit=makeSegmented("ns-target-unit");
+  NS.mode.onChange(nsSwitchMode);
+  [NS.vialUnit,NS.targetUnit].forEach(s=>s.onChange(nsRecalc));
+  ["ns-vial-size","ns-target","ns-sprayvol",
+   "ns-p-peptide","ns-p-recon","ns-p-additional","ns-p-sprayvol","ns-p-target","ns-p-n"
+  ].forEach(id=>{ const el=byId(id); if(el) el.addEventListener("input",()=>nsRecalc(false)); });
+  byId("ns-reset").addEventListener("click",nsReset);
+  byId("ns-calc-btn").addEventListener("click",()=>nsRecalc(true));
+  byId("ns-calc-btn2").addEventListener("click",()=>nsRecalc(true));
+  nsRecalc(false);
+}
+function nsSwitchMode(){
+  const vial=NS.mode.value!=="premixed";
+  byId("ns-vial-pane").hidden=!vial;
+  byId("ns-premix-pane").hidden=vial;
+  nsRecalc(false);
+}
+function nsReset(){
+  ["ns-vial-size","ns-target","ns-sprayvol",
+   "ns-p-peptide","ns-p-recon","ns-p-additional","ns-p-sprayvol","ns-p-target","ns-p-n"
+  ].forEach(id=>{
+    const el=byId(id); if(!el) return;
+    el.value=""; el.removeAttribute("aria-invalid");
+  });
+  document.querySelectorAll("#panel-nasal .error").forEach(e=>{ e.hidden=true; e.textContent=""; });
+  NS.vialUnit.set("mg"); NS.targetUnit.set("mcg");
+  nsRecalc(false);
+  byId("ns-vial-size").focus();
+}
+function nsValidateNonNeg(inputId,errId,label){
+  const input=byId(inputId), err=byId(errId), raw=input.value.trim();
+  if(raw===""){ input.removeAttribute("aria-invalid"); err.hidden=true; return{ok:true,value:0}; }
+  const value=parseNonNegative(raw);
+  if(value===null){
+    input.setAttribute("aria-invalid","true");
+    err.textContent=`Enter a valid ${label} of 0 or more (numbers only).`;
+    err.hidden=false;
+    return{ok:false,value:null};
+  }
+  input.removeAttribute("aria-invalid"); err.hidden=true;
+  return{ok:true,value};
+}
+function nsRecalc(fromButton){
+  /* ----- Vial mode ----- */
+  const vial=validateField("ns-vial-size","ns-err-vial",{required:false,label:"vial size"});
+  const target=validateField("ns-target","ns-err-target",{required:false,label:"target dose"});
+  const spray=validateField("ns-sprayvol","ns-err-sprayvol",{required:false,label:"spray volume in mL"});
+  const vialUnit=NS.vialUnit.value||"mg", targetUnit=NS.targetUnit.value||"mcg";
+  const vialMcg=vial.value!==null?(vialUnit==="mg"?mgToMcg(vial.value):vial.value):null;
+  const targetMcg=target.value!==null?(targetUnit==="mg"?mgToMcg(target.value):target.value):null;
+  const liquid=nsLiquidToAddMl(vialMcg,targetMcg,spray.value);
+  const concMcgMl=(vialMcg!==null&&liquid!==null&&liquid>0)?vialMcg/liquid:null;
+  const perSpray=nsPerSprayMcg(concMcgMl,spray.value);
+  const spraysPerDose=(targetMcg!==null&&perSpray!==null&&perSpray>0)?targetMcg/perSpray:null;
+
+  nsSet("ns-r-liquid",liquid!==null?nsFmt(liquid,2)+" mL":"—");
+  nsSet("ns-r-conc",concMcgMl!==null?nsFmt(concMcgMl,0)+" mcg/mL · "+nsFmt(concMcgMl/1000,2)+" mg/mL":"—");
+  nsSet("ns-r-perspray",perSpray!==null?nsFmt(perSpray,1)+" mcg":"—");
+  nsSet("ns-r-sprays",spraysPerDose!==null?nsFmt(spraysPerDose,2):"—");
+  if(fromButton&&NS.mode.value!=="premixed"){
+    const bits=[];
+    if(liquid!==null) bits.push("add "+nsFmt(liquid,2)+" mL");
+    if(concMcgMl!==null) bits.push("concentration "+nsFmt(concMcgMl,0)+" mcg per mL");
+    if(perSpray!==null) bits.push(nsFmt(perSpray,1)+" mcg per spray");
+    nsAnnounce("ns-sr-vial",bits.length?("Result: "+bits.join(", ")+"."):"Enter vial size, target dose and spray volume.");
+    byId("ns-vial-results").scrollIntoView({behavior:"smooth",block:"nearest"});
+  }
+
+  /* ----- Premixed mode ----- */
+  const pep=validateField("ns-p-peptide","ns-p-err-peptide",{required:false,label:"peptide amount in mg"});
+  const recon=validateField("ns-p-recon","ns-p-err-recon",{required:false,label:"reconstitution volume in mL"});
+  const add=nsValidateNonNeg("ns-p-additional","ns-p-err-additional","additional liquid in mL");
+  const spray2=validateField("ns-p-sprayvol","ns-p-err-sprayvol",{required:false,label:"spray output in mL"});
+  const nSprays=validateField("ns-p-n","ns-p-err-n",{required:false,label:"number of sprays"});
+  const tgt=validateField("ns-p-target","ns-p-err-target",{required:false,label:"target quantity in mcg"});
+  const addVal=add.ok?add.value:null;
+  const finalVol=(recon.value!==null&&addVal!==null)?recon.value+addVal:null;
+  const finalVolOk=finalVol!==null&&finalVol>0;
+  const concMgMl=(pep.value!==null&&finalVolOk)?nsConcentrationMgMl(pep.value,finalVol):null;
+  const concMcgMl2=concMgMl!==null?concMgMl*1000:null;
+  const perSpray2=nsPerSprayMcg(concMcgMl2,spray2.value);
+  const totalN=(perSpray2!==null&&nSprays.value!==null)?perSpray2*nSprays.value:null;
+  const avail=nsSpraysAvailable(finalVolOk?finalVol:null,spray2.value);
+  const forTarget=(tgt.value!==null&&perSpray2!==null&&perSpray2>0)?tgt.value/perSpray2:null;
+
+  nsSet("ns-p-r-peptide",pep.value!==null?nsFmt(pep.value,2)+" mg":"—");
+  nsSet("ns-p-r-finalvol",finalVol!==null?nsFmt(finalVol,2)+" mL":"—");
+  nsSet("ns-p-r-conc",concMgMl!==null?nsFmt(concMgMl,3)+" mg/mL · "+nsFmt(concMcgMl2,0)+" mcg/mL":"—");
+  nsSet("ns-p-r-perspray",perSpray2!==null?nsFmt(perSpray2,1)+" mcg":"—");
+  nsSet("ns-p-r-totaln",(totalN!==null&&nSprays.value!==null)?nsFmt(totalN,1)+" mcg across "+nsFmt(nSprays.value,0)+" spray"+(nSprays.value===1?"":"s"):"—");
+  nsSet("ns-p-r-avail",avail!==null?nsFmt(avail,1):"—");
+  const twrap=byId("ns-p-r-targetwrap");
+  twrap.hidden=forTarget===null;
+  if(forTarget!==null) nsSet("ns-p-r-target",nsFmt(forTarget,2));
+  if(fromButton&&NS.mode.value==="premixed"){
+    const bits=[];
+    if(concMgMl!==null) bits.push("concentration "+nsFmt(concMgMl,3)+" mg per mL");
+    if(perSpray2!==null) bits.push(nsFmt(perSpray2,1)+" mcg per spray");
+    if(avail!==null) bits.push(nsFmt(avail,1)+" sprays available");
+    nsAnnounce("ns-sr-premix",bits.length?("Result: "+bits.join(", ")+"."):"Enter peptide amount, volumes and spray output.");
+    byId("ns-premix-results").scrollIntoView({behavior:"smooth",block:"nearest"});
+  }
+}
+
+/* ==========================================================================
+   HGH DOSING (IU reconstitution) — pure core (no DOM).
+   Auto mode solves BAC water so the dose lands at exactly 10 units:
+     water_mL = vial_IU × 0.10 mL ÷ target_IU
+   ========================================================================== */
+function hghWaterAutoMl(vialIu,targetIu){
+  if(vialIu===null||targetIu===null) return null;
+  if(!(vialIu>0)||!(targetIu>0)) return null;
+  return vialIu*0.1/targetIu;
+}
+function hghRecommendSyringe(drawUnits){
+  if(drawUnits===null||!(drawUnits>0)) return null;
+  const sizes=[30,50,100];
+  for(const s of sizes){ if(drawUnits<=s) return s; }
+  return null;
+}
+if(typeof module!=="undefined"&&module.exports){
+  module.exports=Object.assign(module.exports||{},{
+    hghWaterAutoMl,hghRecommendSyringe
+  });
+}
+
+/* ---------- HGH UI wiring ---------- */
+const HGH={};
+function initHgh(){
+  HGH.mode=makeSegmented("hgh-mode");
+  HGH.syringe=makeSegmented("hgh-syringe");
+  HGH.mode.onChange(hghSwitchMode);
+  HGH.syringe.onChange(()=>hghRecalc(false));
+  ["hgh-vial","hgh-target","hgh-water"].forEach(id=>{
+    byId(id).addEventListener("input",()=>hghRecalc(false));
+  });
+  byId("hgh-reset").addEventListener("click",hghReset);
+  hghRecalc(false);
+}
+function hghSwitchMode(){
+  const auto=HGH.mode.value!=="manual";
+  byId("hgh-water-auto-row").hidden=!auto;
+  byId("hgh-water-manual-row").hidden=auto;
+  byId("hgh-water-label").textContent=auto?"⚡ Auto-calculated":"BAC water";
+  byId("hgh-mode-hint").innerHTML=auto
+    ?"Solves for the BAC water amount that lands your dose at exactly <strong>10 units</strong> — the sweet spot. Too little water means too small a volume to measure accurately (under 5 units); too much water means injecting a larger volume (30+ units)."
+    :"Enter your BAC water amount directly — the calculator shows where your dose lands on the syringe. Aim for 10+ units for an easy-to-read draw.";
+  const werr=byId("hgh-err-water");
+  werr.hidden=true; werr.textContent="";
+  byId("hgh-water").removeAttribute("aria-invalid");
+  hghRecalc(false);
+}
+function hghReset(){
+  ["hgh-vial","hgh-target","hgh-water"].forEach(id=>{
+    const el=byId(id); el.value=""; el.removeAttribute("aria-invalid");
+  });
+  document.querySelectorAll("#panel-hgh .error").forEach(e=>{ e.hidden=true; e.textContent=""; });
+  HGH.mode.set("auto"); HGH.syringe.set("30");
+  hghSwitchMode();
+  byId("hgh-vial").focus();
+}
+function hghRecalc(){
+  const auto=HGH.mode.value!=="manual";
+  const vial=validateField("hgh-vial","hgh-err-vial",{required:false,label:"HGH vial amount in IU"});
+  const target=validateField("hgh-target","hgh-err-target",{required:false,label:"target dose in IU"});
+  let water=null;
+  if(auto){
+    water=hghWaterAutoMl(vial.value,target.value);
+    nsSet("hgh-water-auto",water!==null?nsFmtF(water,2)+" mL":"—");
+  }else{
+    const w=validateField("hgh-water","hgh-err-water",{required:false,label:"BAC water in mL"});
+    water=w.value;
+  }
+  const conc=(vial.value!==null&&water!==null&&water>0)?vial.value/water:null;
+  const drawMl=(target.value!==null&&conc!==null&&conc>0)?target.value/conc:null;
+  const drawUnits=drawMl!==null?mlToUnits(drawMl,SCALE):null;
+  const doses=(vial.value!==null&&target.value!==null&&target.value>0)
+    ?Math.floor(vial.value/target.value):null;
+  const syrUnits=HGH.syringe.value!==null?Number(HGH.syringe.value):null;
+
+  /* visualization */
+  const viz=byId("hgh-vizwrap");
+  const showViz=drawUnits!==null&&syrUnits!==null&&syrUnits>0;
+  viz.hidden=!showViz;
+  if(showViz){
+    renderRuler("hgh-",syrUnits,drawUnits);
+    nsSet("hgh-draw-label",nsFmtF(drawUnits,1)+" units");
+  }
+
+  /* hero + stats */
+  nsSet("hgh-draw-big",drawUnits!==null?nsFmtF(drawUnits,1):"—");
+  nsSet("hgh-r-conc",conc!==null?nsFmtF(conc,1):"—");
+  nsSet("hgh-r-doses",doses!==null?String(doses):"—");
+  const sum=byId("hgh-summary");
+  sum.textContent=(drawUnits!==null&&drawMl!==null&&conc!==null&&doses!==null)
+    ?`${nsFmtF(drawUnits,1)} units (${nsFmtF(drawMl,3)} mL) per dose · ${nsFmtF(conc,1)} IU/mL · ${doses} doses per vial`
+    :"";
+
+  /* recommendation */
+  const recBox=byId("hgh-rec");
+  const rec=hghRecommendSyringe(drawUnits);
+  if(rec!==null){
+    recBox.hidden=false;
+    recBox.textContent=`Recommended: ${(rec/100).toFixed(1)} mL syringe (${rec}-unit) for best precision`;
+  }else if(drawUnits!==null&&drawUnits>100){
+    recBox.hidden=false;
+    recBox.textContent="Draw exceeds a 1.0 mL (100-unit) syringe — add more BAC water to bring it down.";
+  }else recBox.hidden=true;
+
+  /* warnings */
+  const warn=byId("hgh-warn");
+  let warning="";
+  if(vial.value!==null&&target.value!==null&&target.value>vial.value){
+    warning="Target dose exceeds the vial amount — check your numbers.";
+  }else if(drawUnits!==null&&drawUnits<5){
+    warning="Draw is under 5 units — hard to measure accurately. Consider using less BAC water.";
+  }else if(drawUnits!==null&&drawUnits>30&&drawUnits<=100){
+    warning="Draw is over 30 units — a large injection volume. Consider using more BAC water.";
+  }
+  warn.hidden=warning===""; warn.textContent=warning;
+
+  if(drawUnits!==null){
+    nsAnnounce("hgh-sr",`Draw to ${nsFmtF(drawUnits,1)} units for a ${target.value!==null?nsFmtF(target.value,2):"—"} IU dose.${warning?" "+warning:""}`);
+  }else nsAnnounce("hgh-sr","");
+}
+
+/* ==========================================================================
+   MACROS (TDEE estimate + macro split) — pure core (no DOM).
+   kcal = bodyweight_lbs × multiplier (7–21)
+   protein = 1g/lb (cut/maint) or 1.2g/lb (gain zones); fat = 0.3g/lb;
+   carbs = remaining kcal ÷ 4
+   ========================================================================== */
+const MC_ZONES=[
+  {max:9, name:"Extreme Weight Loss", proteinPerLb:1, color:"#f87171",
+   tip:["Cutting hard","An aggressive deficit — the scale will drop fast at first, mostly water and glycogen. Keep protein at 1g/lb to protect muscle, and don't live here longer than a few weeks without a diet break."]},
+  {max:12, name:"Fat Loss", proteinPerLb:1, color:"#fb923c",
+   tip:["Losing fat","A steady deficit — aim for roughly 0.5–1% of body weight lost per week. If fat loss stalls for two full weeks, drop the multiplier by 1."]},
+  {max:15, name:"Maintenance", proteinPerLb:1, color:"#2dd4bf",
+   tip:["Holding steady","At maintenance, the goal is a stable weight. If it drifts up or down for more than a week, nudge the multiplier by 1 in the opposite direction and reassess weekly."]},
+  {max:18, name:"Muscle Gain", proteinPerLb:1.2, color:"#60a5fa",
+   tip:["Gaining muscle","A lean surplus — expect roughly 0.25–0.5% of body weight gained per week. If the scale hasn't moved in 2–3 weeks, raise the multiplier by 1."]},
+  {max:21, name:"Extreme Weight Gain", proteinPerLb:1.2, color:"#c084fc",
+   tip:["Bulking hard","An aggressive surplus — weight should climb every week, with some fat gain expected. If the scale stalls, add 1 to the multiplier."]}
+];
+function mcZone(mult){
+  if(mult===null||!Number.isFinite(mult)) return null;
+  for(const z of MC_ZONES){ if(mult<=z.max) return z; }
+  return MC_ZONES[MC_ZONES.length-1];
+}
+function mcCalc(lbs,mult){
+  const zone=mcZone(mult);
+  if(lbs===null||zone===null) return null;
+  if(!(lbs>0)) return null;
+  const kcal=Math.round(lbs*mult);
+  const proteinG=Math.round(lbs*zone.proteinPerLb);
+  const fatG=Math.round(lbs*0.3);
+  const carbsG=Math.round((kcal-proteinG*4-fatG*9)/4);
+  if(carbsG<0) return null;
+  return {kcal,proteinG,fatG,carbsG,zone};
+}
+if(typeof module!=="undefined"&&module.exports){
+  module.exports=Object.assign(module.exports||{},{
+    MC_ZONES,mcZone,mcCalc
+  });
+}
+
+/* ---------- Macros UI wiring ---------- */
+function initMacros(){
+  const slider=byId("mc-slider"), weight=byId("mc-weight");
+  slider.addEventListener("input",()=>mcRecalc(false));
+  weight.addEventListener("input",()=>mcRecalc(false));
+  byId("mc-reset").addEventListener("click",()=>{
+    weight.value=""; weight.removeAttribute("aria-invalid");
+    const e=byId("mc-err-weight"); e.hidden=true; e.textContent="";
+    slider.value="14";
+    mcRecalc(false);
+    weight.focus();
+  });
+  byId("mc-calc-btn").addEventListener("click",()=>mcRecalc(true));
+  mcRecalc(false);
+}
+function mcRecalc(fromButton){
+  const slider=byId("mc-slider");
+  const mult=Number(slider.value);
+  const zone=mcZone(mult);
+  byId("mc-mult").textContent=String(mult);
+  const zoneEl=byId("mc-zone");
+  zoneEl.textContent=zone?zone.name:"—";
+  zoneEl.style.color=zone?zone.color:"";
+  const w=validateField("mc-weight","mc-err-weight",{required:false,label:"body weight in lbs"});
+  const r=mcCalc(w.value,mult);
+  nsSet("mc-kcal",r!==null?r.kcal.toLocaleString("en-US"):"—");
+  byId("mc-kcal-sub").textContent=r!==null?`${nsFmt(w.value,0)} lbs × ${mult} · ${r.zone.name}`:"";
+  const res=byId("mc-results");
+  res.hidden=r===null;
+  if(r!==null){
+    const pk=r.proteinG*4, ck=r.carbsG*4, fk=r.fatG*9, tot=pk+ck+fk;
+    byId("mc-bar-p").style.width=(pk/tot*100)+"%";
+    byId("mc-bar-c").style.width=(ck/tot*100)+"%";
+    byId("mc-bar-f").style.width=(fk/tot*100)+"%";
+    nsSet("mc-r-protein",String(r.proteinG));
+    nsSet("mc-r-carbs",String(r.carbsG));
+    nsSet("mc-r-fat",String(r.fatG));
+    byId("mc-summary").textContent=
+      `${r.kcal.toLocaleString("en-US")} kcal · ${r.proteinG}g protein (${nsFmt(r.zone.proteinPerLb,1)}g/lb) · ${r.carbsG}g carbs · ${r.fatG}g fat`;
+    byId("mc-tip-title").textContent=r.zone.tip[0];
+    byId("mc-tip-body").textContent=r.zone.tip[1];
+  }
+  if(fromButton){
+    nsAnnounce("mc-sr",r!==null
+      ?`Daily target ${r.kcal.toLocaleString("en-US")} kilocalories: ${r.proteinG} grams protein, ${r.carbsG} grams carbs, ${r.fatG} grams fat.`
+      :"Enter your body weight to calculate macros.");
+    byId("mc-kcal-sub").scrollIntoView({behavior:"smooth",block:"nearest"});
+  }else{
+    nsAnnounce("mc-sr","");
+  }
 }
 
 /* ---------- Quick converters ---------- */
